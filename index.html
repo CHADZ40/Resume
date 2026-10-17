@@ -6,9 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SOKHOM MENGHOUR</title>
   <link rel="stylesheet" href="resume/css/style.css">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('menghour-theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    } catch (_) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  </script>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/943/943329.png">
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script src="https://kit.fontawesome.com/496e464067.js" crossorigin="anonymous"></script>
+  <script defer src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script defer src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script defer src="resume/js/theme.js"></script>
 </head>
 
 <body>
@@ -23,17 +34,20 @@
         <a href="https://www.facebook.com/share/1BTHY7Bi71/?mibextid=wwXIfr" target="_blank">
           SOKHOM MENGHOUR
         </a>
+        <span class="nav-role">Software Developer &amp; AI</span>
       </div>
 
       <!-- Links — truly centered via grid -->
       <ul class="nav-links" id="nav-links-desktop">
         <li><a href="#topofthepage">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
       <!-- Right actions -->
       <div class="nav-actions">
+        <div id="theme-toggle-root"></div>
         <button id="toggle-glow" class="glow-btn">
           <i class="fa-regular fa-circle-dot"></i>
           <span>Mouse Glow</span>
@@ -52,6 +66,7 @@
     <div id="mobile-menu" class="mobile-drawer hidden">
       <ul>
         <li><a href="#topofthepage" id="mob-home">Home</a></li>
+        <li><a href="#projects" id="mob-projects">Projects</a></li>
         <li><a href="#about" id="mob-about">About</a></li>
         <li><a href="#contact" id="mob-contact">Contact</a></li>
       </ul>
@@ -64,15 +79,15 @@
 
       <!-- Text -->
       <div class="hero-text">
-        <p class="hero-eyebrow">Portfolio</p>
+        <p class="hero-eyebrow">Software Developer &amp; AI</p>
         <h1 class="hero-title">
           SOKHOM<br>
           <span class="hero-title-accent">Menghour</span>
         </h1>
         <p class="hero-bio">
-          Motivated high school graduate passionate about technology, software,
-          and AI. A fast learner with strong problem-solving skills, eager to
-          contribute to a dynamic team while growing professionally.
+          Motivated AUPP student passionate about technology, software, and AI.
+          I bring strong problem-solving and communication skills, a solid work
+          ethic, and an eagerness to contribute while continuing to grow.
         </p>
         <a href="resume/doc/SOKHOM_Menghour_CV.pdf" id="CV" target="_blank">
           View My CV &nbsp;↗
@@ -100,16 +115,135 @@
     </div>
   </section>
 
+  <!-- ══════════════════════ FEATURED PROJECTS ══════════════════════ -->
+  <section id="projects" class="projects-section">
+    <div class="section-inner">
+      <div class="projects-heading">
+        <div>
+          <p class="section-eyebrow">Selected Work</p>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-lead">A selection of my portfolio, web development, and student innovation work.</p>
+        </div>
+        <a href="https://github.com/CHADZ40" target="_blank" rel="noopener noreferrer" class="projects-profile">View GitHub profile ↗</a>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-map-location-dot"></i></span><span class="project-type">University Team Project</span></div>
+          <h3>Explore Cambodia</h3>
+          <p>A five-page tourism website introducing Cambodia’s destinations, food, culture, and travel tips. Built for Web Development I with responsive layouts and interactive elements.</p>
+          <div class="project-links">
+            <a href="https://github.com/CHADZ40/Web-final-project" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+            <a href="https://guideme-jade.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="project-preview">
+            <p class="preview-label">Live site preview</p>
+            <iframe src="https://guideme-jade.vercel.app" title="Explore Cambodia live site preview" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-globe"></i></span><span class="project-type">Personal Website</span></div>
+          <h3>My Website</h3>
+          <p>A personal website project built with HTML and CSS to present my work and web design practice.</p>
+          <div class="project-links">
+            <a href="https://github.com/CHADZ40/My-website" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+            <a href="https://my-website-megnhour.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="project-preview">
+            <p class="preview-label">Live site preview</p>
+            <iframe src="https://my-website-megnhour.vercel.app" title="My Website live preview" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-award"></i></span><span class="project-type">Solo Developer · ITM Innovation Hackathon</span></div>
+          <h3>ITM Certificate Portal</h3>
+          <p>A responsive hackathon platform for event information, participant submissions, project showcases, and certificate search and download.</p>
+          <div class="project-links">
+            <a href="https://github.com/CHADZ40/ITM_certificate" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+            <a href="https://itm-certificate.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="project-preview">
+            <p class="preview-label">Live site preview</p>
+            <iframe src="https://itm-certificate.vercel.app" title="ITM Certificate Portal live preview" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════════════════ ABOUT ══════════════════════ -->
   <section id="about" class="about-section">
     <div class="section-inner">
       <p class="section-eyebrow">Who I Am</p>
       <h2 class="section-title">About Me</h2>
       <p class="section-lead">
-        I'm a high school graduate from Phnom Penh with a deep passion for software,
-        technology, and AI. I love building things that look great and work well,
-        and I'm always looking for new challenges to grow from.
+        I'm a Software Development &amp; AI student at the American University of Phnom Penh,
+        with four semesters completed and a 3.83 CGPA. I’m an open-minded, quick learner
+        who values integrity, clear communication, and solving practical problems.
       </p>
+
+      <div class="resume-grid">
+        <article class="resume-panel">
+          <p class="resume-kicker">Education</p>
+          <div class="resume-entry">
+            <h3>American University of Phnom Penh</h3>
+            <p class="resume-subtitle">Software Development &amp; AI · Current student</p>
+            <ul class="resume-list">
+              <li>Four semesters completed</li>
+              <li>CGPA: 3.83, with a consistent record of mostly A+ grades</li>
+            </ul>
+          </div>
+          <div class="resume-entry">
+            <h3>Oudong High School</h3>
+            <p class="resume-subtitle">High School Diploma (Bac II) · 2023–2024</p>
+            <ul class="resume-list">
+              <li>Overall grade: A</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="resume-panel">
+          <p class="resume-kicker">Technical Skills</p>
+          <h3>Programming &amp; Web</h3>
+          <p class="resume-copy">Python, PHP, JavaScript (React.js), HTML, CSS, and MySQL, Data Structure.</p>
+          <h3 class="resume-spaced">Continuous Learning</h3>
+          <p class="resume-copy">Self-study through Coursera alongside university coursework; quick to learn new tools
+            and systems.</p>
+        </article>
+
+        <article class="resume-panel">
+          <p class="resume-kicker">Experience &amp; Involvement</p>
+          <div class="resume-entry">
+            <h3>Community Volunteer</h3>
+            <p class="resume-subtitle">One More Group (Vital and Mii Chiet) / First Lady Events</p>
+            <p class="resume-copy">Supported large charity initiatives and community events in Cambodia, building
+              experience in event coordination, public relations, and teamwork in fast-paced settings.</p>
+          </div>
+          <div class="resume-entry">
+            <h3>Academic Project Management</h3>
+            <p class="resume-subtitle">American University of Phnom Penh</p>
+            <p class="resume-copy">Managed multiple demanding project deadlines through time management, adaptability,
+              and continuous learning.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="competencies">
+        <div>
+          <p class="resume-kicker">Core Competencies</p>
+          <ul class="competency-list">
+            <li>Project management &amp; leadership</li>
+            <li>Critical thinking &amp; problem-solving</li>
+            <li>Communication &amp; public relations</li>
+            <li>Teamwork &amp; time management</li>
+          </ul>
+        </div>
+        <div class="language-block">
+          <p class="resume-kicker">Languages</p>
+          <h3>English <span>Upper-Intermediate · B2</span></h3>
+          <p class="resume-copy">Confident in written communication and conversation; continuing to improve through an
+            international university program.</p>
+        </div>
+      </div>
 
       <!-- Skill cards -->
       <div class="cards-grid">
@@ -137,6 +271,7 @@
     <div class="section-inner">
       <p class="section-eyebrow">Get In Touch</p>
       <h2 class="section-title">Contact Me</h2>
+      <p class="section-lead">Reach out about software, AI, volunteer opportunities, or potential collaboration.</p>
 
       <div class="contact-grid">
         <a href="callto:+85585700533" class="contact-card">
@@ -159,7 +294,7 @@
           <div class="contact-icon"><i class="fa-regular fa-map"></i></div>
           <div class="contact-info">
             <span class="contact-label">Location</span>
-            <span class="contact-value">Boeung Kak 2, Toul Kork, Phnom Penh</span>
+            <span class="contact-value">Boeung Kak 2, Phnom Penh</span>
           </div>
         </div>
 
@@ -216,7 +351,7 @@
       bar3.style.transform = open ? '' : 'rotate(-45deg) translate(0, -6px)';
     });
 
-    ['mob-home', 'mob-about', 'mob-contact'].forEach(id => {
+    ['mob-home', 'mob-projects', 'mob-about', 'mob-contact'].forEach(id => {
       document.getElementById(id)?.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
         bar1.style.transform = bar3.style.transform = '';

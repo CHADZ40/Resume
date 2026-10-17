@@ -24,7 +24,8 @@ Fully responsive across mobile, tablet, and desktop.
 | Layer | Technology |
 |---|---|
 | **Markup** | HTML5 (semantic) |
-| **Styling** | [Tailwind CSS v4](https://tailwindcss.com) (browser build) + custom CSS |
+| **UI component** | React 18 theme switch (CDN) |
+| **Styling** | Custom responsive CSS |
 | **Icons** | [Font Awesome 6](https://fontawesome.com) |
 | **Fonts** | System font stack — `-apple-system`, `SF Pro Display`, `Helvetica Neue` |
 | **Design Language** | Apple Human Interface Guidelines — white/gray palette, frosted-glass nav |
@@ -83,6 +84,7 @@ The site follows Apple's visual identity closely:
 - 🍎 **Apple-inspired design** — pure white background, `#0071e3` accent, SF Pro font stack
 - 📱 **Fully responsive** — mobile hamburger nav, fluid typography, touch-friendly tap targets
 - 🌫️ **Frosted-glass navigation** — `backdrop-filter: saturate(180%) blur(20px)` sticky nav
+- 🌗 **Dark and light themes** — React-powered theme switch, saved preference, and animated transition
 - ✨ **Mouse glow effect** — toggleable ambient cursor glow (desktop)
 - 🔗 **Instagram card** — live preview card with hover overlay
 - 📄 **One-click CV download** — direct PDF link in the hero section
