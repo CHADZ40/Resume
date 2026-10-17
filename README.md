@@ -35,20 +35,15 @@ Fully responsive across mobile, tablet, and desktop.
 ## 📁 Project Structure
 
 ```
-resume/
-├── index.html                      ← Entry point (open this in your browser)
-├── README.md
-├── .gitignore
-└── resume/
-    ├── css/
-    │   └── style.css               ← Base styles & Apple theme
-    ├── js/
-    │   └── script.js               ← Mouse-glow interactive effect
-    ├── Images/
-    │   ├── pfp.jpg                 ← Profile picture
-    │   └── ig-photo.jpg            ← Instagram highlight photo
-    └── doc/
-        └── SOKHOM_Menghour_CV.pdf  ← Downloadable CV
+.
+├── index.html                       ← Vercel entry point
+├── assets/
+│   ├── css/style.css                ← Responsive themes and page styling
+│   ├── js/script.js                 ← Mouse-glow interaction
+│   ├── js/theme.js                  ← React theme switch
+│   ├── images/                      ← Portfolio and profile photos
+│   └── doc/SOKHOM_Menghour_CV.pdf   ← Downloadable CV
+└── README.md
 ```
 
 ---
@@ -94,14 +89,14 @@ The site follows Apple's visual identity closely:
 
 ## 🚀 Getting Started
 
-No build step needed. Just open the file directly:
+No build step is required. From the repository root, open `index.html` or start a local server:
 
 ```bash
 # Clone the repo
 git clone https://github.com/CHADZ40/resume.git
 
-# Open in browser
-open resume/index.html
+# Open in browser on macOS
+open index.html
 ```
 
 Or serve it locally for the best experience:
