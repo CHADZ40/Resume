@@ -491,6 +491,22 @@ img { display: block; }
 .preview-label { margin-bottom: 10px; color: var(--text-2); font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .project-preview iframe { display: block; width: 100%; height: clamp(320px, 48vw, 620px); border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
 
+.design-section { padding: 76px var(--px-mobile); background: var(--surface); border-bottom: 1px solid var(--border); scroll-margin-top: 60px; }
+.design-section .projects-heading { margin-top: 0; }
+.design-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 26px; }
+.design-card { display: flex; flex-direction: column; overflow: hidden; background: var(--bg); border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 8px 28px rgba(0,0,0,.07); transition: transform .25s ease, box-shadow .25s ease; }
+.design-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.11); }
+.design-preview { position: relative; display: block; aspect-ratio: 0.9; overflow: hidden; background: var(--surface); }
+.design-preview img { width: 100%; height: 100%; object-fit: contain; transition: transform .5s ease; }
+.design-preview:hover img { transform: scale(1.035); }
+.design-preview-cta { position: absolute; right: 16px; bottom: 16px; padding: 10px 14px; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; background: rgba(20,24,32,.78); color: #fff; font-size: 12px; font-weight: 650; backdrop-filter: blur(12px); }
+.design-card-content { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 22px; }
+.design-card-content .project-card-top { margin-bottom: 14px; }
+.design-card-content h3 { font-size: 22px; letter-spacing: -.02em; }
+.design-card-content > p { margin-top: 10px; color: var(--text-2); font-size: 14px; line-height: 1.7; }
+.design-link { display: inline-flex; gap: 6px; margin-top: auto; padding-top: 18px; color: var(--accent); font-size: 13px; font-weight: 650; }
+.design-link:hover { color: var(--accent-h); }
+
 body, #navbar, .hero-section, .ig-card, .about-section, .contact-section, footer,
 .resume-panel, .competencies, .card, .contact-card, .contact-icon, .project-card,
 .glow-btn, .hamburger, .social-btn {
@@ -725,6 +741,7 @@ footer p {
 
   .about-section   { padding-inline: var(--px-tablet); }
   .projects-section { padding-inline: var(--px-tablet); }
+  .design-section { padding-inline: var(--px-tablet); }
   .cards-grid      { grid-template-columns: repeat(3, 1fr); }
   .resume-grid     { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .resume-panel:first-child { grid-row: span 2; }
@@ -753,6 +770,7 @@ footer p {
 
   .about-section   { padding-inline: var(--px-desktop); }
   .projects-section { padding: 88px var(--px-desktop); }
+  .design-section { padding: 88px var(--px-desktop); }
   .contact-section { padding-inline: var(--px-desktop); }
   footer           { padding-inline: var(--px-desktop); }
 }
@@ -770,4 +788,13 @@ footer p {
   .hero-section { min-height: auto; padding-block: 56px; }
 
   .about-section, .contact-section { padding-block: 64px; }
+  .design-section { padding-block: 64px; }
+}
+
+@media (min-width: 768px) {
+  .design-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .design-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
