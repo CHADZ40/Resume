@@ -49,6 +49,25 @@
 
 html { scroll-behavior: smooth; }
 
+@media (prefers-reduced-motion: no-preference) {
+  .portfolio-app.js-ready .section-inner > *,
+  .portfolio-app.js-ready .project-card,
+  .portfolio-app.js-ready .design-card,
+  .portfolio-app.js-ready .academic-term,
+  .portfolio-app.js-ready .resume-panel,
+  .portfolio-app.js-ready .card,
+  .portfolio-app.js-ready .contact-card {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 650ms ease, transform 650ms cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .portfolio-app.js-ready .scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 body {
   background: var(--bg);
   color: var(--text-1);

@@ -23,8 +23,8 @@ Fully responsive across mobile, tablet, and desktop.
 
 | Layer | Technology |
 |---|---|
-| **Markup** | HTML5 (semantic) |
-| **UI component** | React 18 theme switch (CDN) |
+| **UI framework** | React 18 (CDN, no build step) |
+| **Markup** | Semantic HTML rendered by the React portfolio app |
 | **Styling** | Custom responsive CSS |
 | **Icons** | [Font Awesome 6](https://fontawesome.com) |
 | **Fonts** | System font stack — `-apple-system`, `SF Pro Display`, `Helvetica Neue` |
@@ -39,8 +39,7 @@ Fully responsive across mobile, tablet, and desktop.
 ├── index.html                       ← Vercel entry point
 ├── assets/
 │   ├── css/style.css                ← Responsive themes and page styling
-│   ├── js/script.js                 ← Mouse-glow interaction
-│   ├── js/theme.js                  ← React theme switch
+│   ├── js/app.js                    ← React app, navigation, theme, glow, and scroll reveals
 │   ├── images/                      ← Portfolio and profile photos
 │   └── doc/SOKHOM_Menghour_CV.pdf   ← Downloadable CV
 └── README.md
@@ -80,6 +79,7 @@ The site follows Apple's visual identity closely:
 - 📱 **Fully responsive** — mobile hamburger nav, fluid typography, touch-friendly tap targets
 - 🌫️ **Frosted-glass navigation** — `backdrop-filter: saturate(180%) blur(20px)` sticky nav
 - 🌗 **Dark and light themes** — React-powered theme switch, saved preference, and animated transition
+- 🎞️ **Scroll reveals** — Intersection Observer animations with reduced-motion support
 - ✨ **Mouse glow effect** — toggleable ambient cursor glow (desktop)
 - 🔗 **Instagram card** — live preview card with hover overlay
 - 📄 **One-click CV download** — direct PDF link in the hero section
@@ -89,7 +89,7 @@ The site follows Apple's visual identity closely:
 
 ## 🚀 Getting Started
 
-No build step is required. From the repository root, open `index.html` or start a local server:
+No build step is required. Serve the repository root so the browser can load the React app and its assets:
 
 ```bash
 # Clone the repo

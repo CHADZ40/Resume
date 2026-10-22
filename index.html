@@ -19,816 +19,796 @@
   <script src="https://kit.fontawesome.com/496e464067.js" crossorigin="anonymous"></script>
   <script defer src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script defer src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <script defer src="assets/js/theme.js"></script>
+  <script defer src="assets/js/app.js"></script>
 </head>
 
 <body>
-  <span id="topofthepage"></span>
+  <div id="root"></div>
+  <template id="portfolio-template">
+    <span id="topofthepage"></span>
 
-  <!-- ══════════════════════ NAV ══════════════════════ -->
-  <nav id="navbar">
-    <div class="nav-inner">
+    <!-- ══════════════════════ NAV ══════════════════════ -->
+    <nav id="navbar">
+      <div class="nav-inner">
 
-      <!-- Brand -->
-      <div class="nav-brand">
-        <a href="https://www.facebook.com/share/1BTHY7Bi71/?mibextid=wwXIfr" target="_blank">
-          SOKHOM MENGHOUR
-        </a>
-        <span class="nav-role">Software Developer &amp; AI</span>
+        <!-- Brand -->
+        <div class="nav-brand">
+          <a href="https://www.facebook.com/share/1BTHY7Bi71/?mibextid=wwXIfr" target="_blank">
+            SOKHOM MENGHOUR
+          </a>
+          <span class="nav-role">Software Developer &amp; AI</span>
+        </div>
+
+        <!-- Links — truly centered via grid -->
+        <ul class="nav-links" id="nav-links-desktop">
+          <li><a href="#topofthepage">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Right actions -->
+        <div class="nav-actions">
+          <div id="theme-toggle-root"></div>
+          <button id="toggle-glow" class="glow-btn">
+            <i class="fa-regular fa-circle-dot"></i>
+            <span>Mouse Glow</span>
+          </button>
+          <!-- Hamburger -->
+          <button id="menu-btn" class="hamburger" aria-label="Menu">
+            <span id="bar1"></span>
+            <span id="bar2"></span>
+            <span id="bar3"></span>
+          </button>
+        </div>
+
       </div>
 
-      <!-- Links — truly centered via grid -->
-      <ul class="nav-links" id="nav-links-desktop">
-        <li><a href="#topofthepage">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#design">Design</a></li>
-        <li><a href="#academics">Academics</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <!-- Right actions -->
-      <div class="nav-actions">
-        <div id="theme-toggle-root"></div>
-        <button id="toggle-glow" class="glow-btn">
-          <i class="fa-regular fa-circle-dot"></i>
-          <span>Mouse Glow</span>
-        </button>
-        <!-- Hamburger -->
-        <button id="menu-btn" class="hamburger" aria-label="Menu">
-          <span id="bar1"></span>
-          <span id="bar2"></span>
-          <span id="bar3"></span>
-        </button>
+      <!-- Mobile drawer -->
+      <div id="mobile-menu" class="mobile-drawer hidden">
+        <ul>
+          <li><a href="#topofthepage" id="mob-home">Home</a></li>
+          <li><a href="#projects" id="mob-projects">Projects</a></li>
+          <li><a href="#design" id="mob-design">Design</a></li>
+          <li><a href="#academics" id="mob-academics">Academics</a></li>
+          <li><a href="#about" id="mob-about">About</a></li>
+          <li><a href="#contact" id="mob-contact">Contact</a></li>
+        </ul>
       </div>
+    </nav>
 
-    </div>
+    <!-- ══════════════════════ HERO ══════════════════════ -->
+    <section class="hero-section">
+      <div class="hero-inner">
 
-    <!-- Mobile drawer -->
-    <div id="mobile-menu" class="mobile-drawer hidden">
-      <ul>
-        <li><a href="#topofthepage" id="mob-home">Home</a></li>
-        <li><a href="#projects" id="mob-projects">Projects</a></li>
-        <li><a href="#design" id="mob-design">Design</a></li>
-        <li><a href="#academics" id="mob-academics">Academics</a></li>
-        <li><a href="#about" id="mob-about">About</a></li>
-        <li><a href="#contact" id="mob-contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+        <!-- Text -->
+        <div class="hero-text">
+          <p class="hero-eyebrow">Software Developer &amp; AI</p>
+          <h1 class="hero-title">
+            SOKHOM<br>
+            <span class="hero-title-accent">Menghour</span>
+          </h1>
+          <p class="hero-bio">
+            Motivated AUPP student passionate about technology, software, and AI.
+            I bring strong problem-solving and communication skills, a solid work
+            ethic, and an eagerness to contribute while continuing to grow.
+          </p>
+          <a href="assets/doc/SOKHOM_Menghour_CV.pdf" id="CV" target="_blank" rel="noopener noreferrer">
+            View My CV &nbsp;↗
+          </a>
+        </div>
 
-  <!-- ══════════════════════ HERO ══════════════════════ -->
-  <section class="hero-section">
-    <div class="hero-inner">
+        <!-- Instagram Card -->
+        <div class="ig-card">
+          <a href="https://www.instagram.com/sokhom.d_menghour?igsh=OHY2cmxzaDVmMWt6&utm_source=qr" target="_blank"
+            class="ig-card-image-wrap">
+            <img src="assets/images/ig-photo.jpg" alt="Instagram post" class="ig-card-img">
+            <div class="ig-card-overlay">
+              <span>Open on Instagram &nbsp;↗</span>
+            </div>
+          </a>
+          <div class="ig-card-footer">
+            <div class="ig-card-user">
+              <img src="assets/images/pfp.jpg" alt="Profile" class="ig-card-pfp">
+              <span>sokhom.menghour</span>
+            </div>
+            <span class="ig-card-label">Instagram</span>
+          </div>
+        </div>
 
-      <!-- Text -->
-      <div class="hero-text">
-        <p class="hero-eyebrow">Software Developer &amp; AI</p>
-        <h1 class="hero-title">
-          SOKHOM<br>
-          <span class="hero-title-accent">Menghour</span>
-        </h1>
-        <p class="hero-bio">
-          Motivated AUPP student passionate about technology, software, and AI.
-          I bring strong problem-solving and communication skills, a solid work
-          ethic, and an eagerness to contribute while continuing to grow.
+      </div>
+    </section>
+
+    <!-- ══════════════════════ FEATURED PROJECTS ══════════════════════ -->
+    <section id="projects" class="projects-section">
+      <div class="section-inner">
+        <div class="projects-heading">
+          <div>
+            <p class="section-eyebrow">Selected Work</p>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-lead">A selection of my portfolio, web development, and student innovation work.</p>
+          </div>
+          <a href="https://github.com/CHADZ40" target="_blank" rel="noopener noreferrer" class="projects-profile">View
+            GitHub profile ↗</a>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-card-top"><span class="project-mark"><i
+                  class="fa-solid fa-map-location-dot"></i></span><span class="project-type">University Team
+                Project</span></div>
+            <h3>Explore Cambodia</h3>
+            <p>A five-page tourism website introducing Cambodia’s destinations, food, culture, and travel tips. Built
+              for
+              Web Development I with responsive layouts and interactive elements.</p>
+            <div class="project-links">
+              <a href="https://github.com/CHADZ40/Web-final-project" target="_blank" rel="noopener noreferrer">View
+                repository <span aria-hidden="true">↗</span></a>
+              <a href="https://guideme-jade.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span
+                  aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project-preview">
+              <p class="preview-label">Live site preview</p>
+              <iframe src="https://guideme-jade.vercel.app" title="Explore Cambodia live site preview" loading="lazy"
+                referrerpolicy="no-referrer"></iframe>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-globe"></i></span><span
+                class="project-type">Personal Website</span></div>
+            <h3>My Website</h3>
+            <p>A personal website project built with HTML and CSS to present my work and web design practice.</p>
+            <div class="project-links">
+              <a href="https://github.com/CHADZ40/My-website" target="_blank" rel="noopener noreferrer">View repository
+                <span aria-hidden="true">↗</span></a>
+              <a href="https://kuyteavemuy.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span
+                  aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project-preview">
+              <p class="preview-label">Live site preview</p>
+              <iframe src="https://kuyteavemuy.vercel.app" title="My Website live preview" loading="lazy"
+                referrerpolicy="no-referrer"></iframe>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-award"></i></span><span
+                class="project-type">Solo Developer · ITM Innovation Hackathon</span></div>
+            <h3>ITM Certificate Portal</h3>
+            <p>A responsive hackathon platform for event information, participant submissions, project showcases, and
+              certificate search and download.</p>
+            <div class="project-links">
+              <a href="https://github.com/CHADZ40/ITM_certificate" target="_blank" rel="noopener noreferrer">View
+                repository <span aria-hidden="true">↗</span></a>
+              <a href="https://itm-certificate.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span
+                  aria-hidden="true">↗</span></a>
+            </div>
+            <div class="project-preview">
+              <p class="preview-label">Live site preview</p>
+              <iframe src="https://itm-certificate.vercel.app" title="ITM Certificate Portal live preview"
+                loading="lazy" referrerpolicy="no-referrer"></iframe>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ DESIGN PROJECT ══════════════════════ -->
+    <section id="design" class="design-section">
+      <div class="section-inner">
+        <div class="projects-heading">
+          <div>
+            <p class="section-eyebrow">Visual Communication</p>
+            <h2 class="section-title">Design Projects</h2>
+            <p class="section-lead">Thoughtful visuals that bring a clear message and a consistent theme together.</p>
+          </div>
+        </div>
+        <div class="design-grid">
+          <article class="design-card">
+            <a class="design-preview" href="assets/projects/phchum%20ben%202.pdf" target="_blank"
+              rel="noopener noreferrer" aria-label="Open Pchum Ben design PDF">
+              <img src="assets/projects/phchum-ben-preview.png"
+                alt="Pchum Ben themed poster with temple imagery and traditional Khmer design">
+              <span class="design-preview-cta">View design ↗</span>
+            </a>
+            <div class="design-card-content">
+              <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
+                  class="project-type">Adobe Illustrator</span></div>
+              <h3>Pchum Ben Poster</h3>
+              <p>A festival poster that combines temple imagery, traditional details, and a vivid blue palette to create
+                a
+                warm, cultural feel.</p>
+            </div>
+          </article>
+          <article class="design-card">
+            <a class="design-preview" href="assets/projects/pkaloung.pdf" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Pka Loung design PDF">
+              <img src="assets/projects/pkaloung-preview.png"
+                alt="Pka Loung Coffee promotional poster for a passion fruit cream drink">
+              <span class="design-preview-cta">View design ↗</span>
+            </a>
+            <div class="design-card-content">
+              <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
+                  class="project-type">Adobe Illustrator</span></div>
+              <h3>Pka Loung Coffee Promotion</h3>
+              <p>A bright drink promotion built around product photography, playful lettering, and fresh colors to make
+                the new menu item stand out.</p>
+            </div>
+          </article>
+          <article class="design-card">
+            <a class="design-preview" href="assets/projects/thana.pdf" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Thana design PDF">
+              <img src="assets/projects/thana-preview.png"
+                alt="Football poster featuring a player in a blue uniform against a red and gold background">
+              <span class="design-preview-cta">View design ↗</span>
+            </a>
+            <div class="design-card-content">
+              <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
+                  class="project-type">Adobe Illustrator</span></div>
+              <h3>Thana Football Poster</h3>
+              <p>An energetic player poster using bold red and gold shapes, curved movement, and a cutout portrait to
+                create a strong sports theme.</p>
+            </div>
+          </article>
+          <article class="design-card">
+            <a class="design-preview" href="assets/projects/seyha.pdf" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Seyha design PDF">
+              <img src="assets/projects/seyha-preview.png"
+                alt="Football poster featuring a player in a red uniform on a textured background">
+              <span class="design-preview-cta">View design ↗</span>
+            </a>
+            <div class="design-card-content">
+              <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
+                  class="project-type">Adobe Illustrator</span></div>
+              <h3>Seyha Football Poster</h3>
+              <p>A player-focused composition pairing a textured warm background with a vivid red focal shape and strong
+                name typography.</p>
+            </div>
+          </article>
+          <article class="design-card">
+            <a class="design-preview" href="assets/projects/TEACHER%20SMEY%202.pdf" target="_blank"
+              rel="noopener noreferrer" aria-label="Open Teacher Smey design PDF">
+              <img src="assets/projects/teacher-smey-preview.png"
+                alt="Formal Khmer event design with stage curtains and official portraits">
+              <span class="design-preview-cta">View design ↗</span>
+            </a>
+            <div class="design-card-content">
+              <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
+                  class="project-type">Adobe Illustrator</span></div>
+              <h3>Teacher Smey Event Design</h3>
+              <p>A formal Khmer event graphic with a theatrical curtain frame, centered portraits, and a balanced layout
+                for the event details.</p>
+            </div>
+          </article>
+          <article class="design-card">
+            <a class="design-preview" href="assets/projects/congratulation.pdf" target="_blank"
+              rel="noopener noreferrer" aria-label="Open volunteer recognition design PDF">
+              <img src="assets/projects/congratulation-preview.png"
+                alt="Volunteer recognition certificate designed for a community project">
+              <span class="design-preview-cta">View design ↗</span>
+            </a>
+            <div class="design-card-content">
+              <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
+                  class="project-type">Adobe Illustrator</span></div>
+              <h3>Volunteer Recognition Certificate</h3>
+              <p>A celebratory certificate using a warm palette, clear hierarchy, and decorative confetti to make
+                community recognition feel special.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ ACADEMIC PERFORMANCE ══════════════════════ -->
+    <section id="academics" class="academics-section">
+      <div class="section-inner">
+        <div class="projects-heading">
+          <div>
+            <p class="section-eyebrow">Education</p>
+            <h2 class="section-title">Academic Performance</h2>
+            <p class="section-lead">Bachelor of Science in Software Development · American University of Phnom Penh</p>
+          </div>
+        </div>
+        <div class="academic-profile">
+          <div><span>Student</span><strong>Menghour Sokhom</strong></div>
+          <!-- <div><span>Student ID</span><strong>2025389</strong></div> -->
+          <div><span>Current cumulative GPA</span><strong>3.82 / 4.00</strong></div>
+          <div><span>Total units earned</span><strong>52</strong></div>
+        </div>
+
+        <div class="academic-terms">
+          <article class="academic-term">
+            <h3>Spring 2025</h3>
+            <div class="academic-table-wrap">
+              <table class="academic-table">
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th>Title</th>
+                    <th>UA</th>
+                    <th>UE</th>
+                    <th>UC</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ENGL 101</td>
+                    <td>English Composition I</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>GEOG 120</td>
+                    <td>World Regional Geography</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>ITEC 101</td>
+                    <td>Introduction to Information Technology</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>MATH 177</td>
+                    <td>Elementary Statistics</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>SMNR 101</td>
+                    <td>First Year Experience</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>P</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="term-summary">Units: 13 attempted · 13 earned · 12 carried <span>Term GPA 4.00 · Cumulative GPA
+                4.00</span></p>
+          </article>
+          <article class="academic-term">
+            <h3>Summer 2025</h3>
+            <div class="academic-table-wrap">
+              <table class="academic-table">
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th>Title</th>
+                    <th>UA</th>
+                    <th>UE</th>
+                    <th>UC</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ENVS 131C</td>
+                    <td>Environmental Science</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>B</td>
+                  </tr>
+                  <tr>
+                    <td>HUMN 101</td>
+                    <td>Introduction to the Humanities</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="term-summary">Units: 6 attempted · 6 earned · 6 carried <span>Term GPA 3.50 · Cumulative GPA
+                3.83</span></p>
+          </article>
+          <article class="academic-term">
+            <h3>Fall 2025</h3>
+            <div class="academic-table-wrap">
+              <table class="academic-table">
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th>Title</th>
+                    <th>UA</th>
+                    <th>UE</th>
+                    <th>UC</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>COSC 111</td>
+                    <td>Computer Science Survey</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A-</td>
+                  </tr>
+                  <tr>
+                    <td>COSC 121</td>
+                    <td>Computer Science A</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>COSC 241</td>
+                    <td>Computing Science Fundamentals</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A-</td>
+                  </tr>
+                  <tr>
+                    <td>ENGL 102</td>
+                    <td>English Composition II</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>B+</td>
+                  </tr>
+                  <tr>
+                    <td>HUMN 110</td>
+                    <td>Arts and Culture</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="term-summary">Units: 15 attempted · 15 earned · 15 carried <span>Term GPA 3.73 · Cumulative GPA
+                3.79</span></p>
+          </article>
+          <article class="academic-term">
+            <h3>Spring 2026</h3>
+            <div class="academic-table-wrap">
+              <table class="academic-table">
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th>Title</th>
+                    <th>UA</th>
+                    <th>UE</th>
+                    <th>UC</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>COMM 103</td>
+                    <td>Oral Communication</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A-</td>
+                  </tr>
+                  <tr>
+                    <td>COSC 331</td>
+                    <td>Operating Systems</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>COSC 340</td>
+                    <td>Networking Essentials</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>ICT 320</td>
+                    <td>Cybersecurity Technician</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>ITM 201</td>
+                    <td>Java Programming I</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="term-summary">Units: 15 attempted · 15 earned · 15 carried <span>Term GPA 3.93 · Cumulative GPA
+                3.83</span></p>
+          </article>
+          <article class="academic-term">
+            <h3>Summer 2026</h3>
+            <div class="academic-table-wrap">
+              <table class="academic-table">
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th>Title</th>
+                    <th>UA</th>
+                    <th>UE</th>
+                    <th>UC</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>COSC 251</td>
+                    <td>Data Structure <small>(Repeated course)</small></td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>W</td>
+                  </tr>
+                  <tr>
+                    <td>INFO 250</td>
+                    <td>Web Development I</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>A-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="term-summary">Units: 6 attempted · 3 earned · 3 carried <span>Term GPA 3.67 · Cumulative GPA
+                3.82</span></p>
+          </article>
+          <article class="academic-term">
+            <h3>Fall 2026 <span class="in-progress">In progress</span></h3>
+            <div class="academic-table-wrap">
+              <table class="academic-table">
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th>Title</th>
+                    <th>UA</th>
+                    <th>UE</th>
+                    <th>UC</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>COSC 221</td>
+                    <td>Computer Science B</td>
+                    <td>3</td>
+                    <td>–</td>
+                    <td>–</td>
+                    <td>RG</td>
+                  </tr>
+                  <tr>
+                    <td>COSC 251</td>
+                    <td>Data Structure</td>
+                    <td>3</td>
+                    <td>–</td>
+                    <td>–</td>
+                    <td>RG</td>
+                  </tr>
+                  <tr>
+                    <td>ITM 360</td>
+                    <td>Artificial Intelligence</td>
+                    <td>3</td>
+                    <td>–</td>
+                    <td>–</td>
+                    <td>RG</td>
+                  </tr>
+                  <tr>
+                    <td>ITM 380</td>
+                    <td>Cloud Computing</td>
+                    <td>3</td>
+                    <td>–</td>
+                    <td>–</td>
+                    <td>RG</td>
+                  </tr>
+                  <tr>
+                    <td>PHIL 110</td>
+                    <td>Critical Thinking</td>
+                    <td>3</td>
+                    <td>–</td>
+                    <td>–</td>
+                    <td>RG</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="term-summary">Units: 15 attempted · 0 earned · 0 carried <span>Term GPA 0.00 · Cumulative GPA
+                3.82</span></p>
+          </article>
+        </div>
+        <p class="academic-footnote">Academic standing: Good · Total units attempted: 70 · Total grade points earned:
+          195.03</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ ABOUT ══════════════════════ -->
+    <section id="about" class="about-section">
+      <div class="section-inner">
+        <p class="section-eyebrow">Who I Am</p>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-lead">
+          I'm a Software Development &amp; AI student at the American University of Phnom Penh,
+          with four semesters completed and a 3.83 CGPA. I’m an open-minded, quick learner
+          who values integrity, clear communication, and solving practical problems.
         </p>
-        <a href="assets/doc/SOKHOM_Menghour_CV.pdf" id="CV" target="_blank" rel="noopener noreferrer">
-          View My CV &nbsp;↗
-        </a>
-      </div>
 
-      <!-- Instagram Card -->
-      <div class="ig-card">
-        <a href="https://www.instagram.com/sokhom.d_menghour?igsh=OHY2cmxzaDVmMWt6&utm_source=qr" target="_blank"
-          class="ig-card-image-wrap">
-          <img src="assets/images/ig-photo.jpg" alt="Instagram post" class="ig-card-img">
-          <div class="ig-card-overlay">
-            <span>Open on Instagram &nbsp;↗</span>
-          </div>
-        </a>
-        <div class="ig-card-footer">
-          <div class="ig-card-user">
-            <img src="assets/images/pfp.jpg" alt="Profile" class="ig-card-pfp">
-            <span>sokhom.menghour</span>
-          </div>
-          <span class="ig-card-label">Instagram</span>
+        <div class="resume-grid">
+          <article class="resume-panel">
+            <p class="resume-kicker">Education</p>
+            <div class="resume-entry">
+              <h3>American University of Phnom Penh</h3>
+              <p class="resume-subtitle">Software Development &amp; AI · Current student</p>
+              <ul class="resume-list">
+                <li>Four semesters completed</li>
+                <li>CGPA: 3.83, with a consistent record of mostly A+ grades</li>
+              </ul>
+            </div>
+            <div class="resume-entry">
+              <h3>Oudong High School</h3>
+              <p class="resume-subtitle">High School Diploma (Bac II) · 2023–2024</p>
+              <ul class="resume-list">
+                <li>Overall grade: A</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="resume-panel">
+            <p class="resume-kicker">Technical Skills</p>
+            <h3>Programming &amp; Web</h3>
+            <p class="resume-copy">Python, PHP, JavaScript (React.js), HTML, CSS, MySQL, and data structures.</p>
+            <h3 class="resume-spaced">Design &amp; Productivity</h3>
+            <p class="resume-copy">Adobe Illustrator for themed visual design; Microsoft Word for polished documents;
+              Microsoft PowerPoint for well-designed animated presentations.</p>
+            <h3 class="resume-spaced">Continuous Learning</h3>
+            <p class="resume-copy">Self-study through Coursera alongside university coursework; quick to learn new tools
+              and systems.</p>
+          </article>
+
+          <article class="resume-panel">
+            <p class="resume-kicker">Experience &amp; Involvement</p>
+            <div class="resume-entry">
+              <h3>Community Volunteer</h3>
+              <p class="resume-subtitle">One More Group (Vital and Mii Chiet) / First Lady Events</p>
+              <p class="resume-copy">Supported large charity initiatives and community events in Cambodia, building
+                experience in event coordination, public relations, and teamwork in fast-paced settings.</p>
+            </div>
+            <div class="resume-entry">
+              <h3>Academic Project Management</h3>
+              <p class="resume-subtitle">American University of Phnom Penh</p>
+              <p class="resume-copy">Managed multiple demanding project deadlines through time management, adaptability,
+                and continuous learning.</p>
+            </div>
+          </article>
         </div>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- ══════════════════════ FEATURED PROJECTS ══════════════════════ -->
-  <section id="projects" class="projects-section">
-    <div class="section-inner">
-      <div class="projects-heading">
-        <div>
-          <p class="section-eyebrow">Selected Work</p>
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-lead">A selection of my portfolio, web development, and student innovation work.</p>
-        </div>
-        <a href="https://github.com/CHADZ40" target="_blank" rel="noopener noreferrer" class="projects-profile">View
-          GitHub profile ↗</a>
-      </div>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-card-top"><span class="project-mark"><i
-                class="fa-solid fa-map-location-dot"></i></span><span class="project-type">University Team
-              Project</span></div>
-          <h3>Explore Cambodia</h3>
-          <p>A five-page tourism website introducing Cambodia’s destinations, food, culture, and travel tips. Built for
-            Web Development I with responsive layouts and interactive elements.</p>
-          <div class="project-links">
-            <a href="https://github.com/CHADZ40/Web-final-project" target="_blank" rel="noopener noreferrer">View
-              repository <span aria-hidden="true">↗</span></a>
-            <a href="https://guideme-jade.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span
-                aria-hidden="true">↗</span></a>
-          </div>
-          <div class="project-preview">
-            <p class="preview-label">Live site preview</p>
-            <iframe src="https://guideme-jade.vercel.app" title="Explore Cambodia live site preview" loading="lazy"
-              referrerpolicy="no-referrer"></iframe>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-globe"></i></span><span
-              class="project-type">Personal Website</span></div>
-          <h3>My Website</h3>
-          <p>A personal website project built with HTML and CSS to present my work and web design practice.</p>
-          <div class="project-links">
-            <a href="https://github.com/CHADZ40/My-website" target="_blank" rel="noopener noreferrer">View repository
-              <span aria-hidden="true">↗</span></a>
-            <a href="https://kuyteavemuy.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span
-                aria-hidden="true">↗</span></a>
-          </div>
-          <div class="project-preview">
-            <p class="preview-label">Live site preview</p>
-            <iframe src="https://kuyteavemuy.vercel.app" title="My Website live preview" loading="lazy"
-              referrerpolicy="no-referrer"></iframe>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-award"></i></span><span
-              class="project-type">Solo Developer · ITM Innovation Hackathon</span></div>
-          <h3>ITM Certificate Portal</h3>
-          <p>A responsive hackathon platform for event information, participant submissions, project showcases, and
-            certificate search and download.</p>
-          <div class="project-links">
-            <a href="https://github.com/CHADZ40/ITM_certificate" target="_blank" rel="noopener noreferrer">View
-              repository <span aria-hidden="true">↗</span></a>
-            <a href="https://itm-certificate.vercel.app" target="_blank" rel="noopener noreferrer">Live site <span
-                aria-hidden="true">↗</span></a>
-          </div>
-          <div class="project-preview">
-            <p class="preview-label">Live site preview</p>
-            <iframe src="https://itm-certificate.vercel.app" title="ITM Certificate Portal live preview" loading="lazy"
-              referrerpolicy="no-referrer"></iframe>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ DESIGN PROJECT ══════════════════════ -->
-  <section id="design" class="design-section">
-    <div class="section-inner">
-      <div class="projects-heading">
-        <div>
-          <p class="section-eyebrow">Visual Communication</p>
-          <h2 class="section-title">Design Projects</h2>
-          <p class="section-lead">Thoughtful visuals that bring a clear message and a consistent theme together.</p>
-        </div>
-      </div>
-      <div class="design-grid">
-        <article class="design-card">
-          <a class="design-preview" href="assets/projects/phchum%20ben%202.pdf" target="_blank"
-            rel="noopener noreferrer" aria-label="Open Pchum Ben design PDF">
-            <img src="assets/projects/phchum-ben-preview.png"
-              alt="Pchum Ben themed poster with temple imagery and traditional Khmer design">
-            <span class="design-preview-cta">View design ↗</span>
-          </a>
-          <div class="design-card-content">
-            <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
-                class="project-type">Adobe Illustrator</span></div>
-            <h3>Pchum Ben Poster</h3>
-            <p>A festival poster that combines temple imagery, traditional details, and a vivid blue palette to create a
-              warm, cultural feel.</p>
-          </div>
-        </article>
-        <article class="design-card">
-          <a class="design-preview" href="assets/projects/pkaloung.pdf" target="_blank" rel="noopener noreferrer"
-            aria-label="Open Pka Loung design PDF">
-            <img src="assets/projects/pkaloung-preview.png"
-              alt="Pka Loung Coffee promotional poster for a passion fruit cream drink">
-            <span class="design-preview-cta">View design ↗</span>
-          </a>
-          <div class="design-card-content">
-            <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
-                class="project-type">Adobe Illustrator</span></div>
-            <h3>Pka Loung Coffee Promotion</h3>
-            <p>A bright drink promotion built around product photography, playful lettering, and fresh colors to make
-              the new menu item stand out.</p>
-          </div>
-        </article>
-        <article class="design-card">
-          <a class="design-preview" href="assets/projects/thana.pdf" target="_blank" rel="noopener noreferrer"
-            aria-label="Open Thana design PDF">
-            <img src="assets/projects/thana-preview.png"
-              alt="Football poster featuring a player in a blue uniform against a red and gold background">
-            <span class="design-preview-cta">View design ↗</span>
-          </a>
-          <div class="design-card-content">
-            <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
-                class="project-type">Adobe Illustrator</span></div>
-            <h3>Thana Football Poster</h3>
-            <p>An energetic player poster using bold red and gold shapes, curved movement, and a cutout portrait to
-              create a strong sports theme.</p>
-          </div>
-        </article>
-        <article class="design-card">
-          <a class="design-preview" href="assets/projects/seyha.pdf" target="_blank" rel="noopener noreferrer"
-            aria-label="Open Seyha design PDF">
-            <img src="assets/projects/seyha-preview.png"
-              alt="Football poster featuring a player in a red uniform on a textured background">
-            <span class="design-preview-cta">View design ↗</span>
-          </a>
-          <div class="design-card-content">
-            <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
-                class="project-type">Adobe Illustrator</span></div>
-            <h3>Seyha Football Poster</h3>
-            <p>A player-focused composition pairing a textured warm background with a vivid red focal shape and strong
-              name typography.</p>
-          </div>
-        </article>
-        <article class="design-card">
-          <a class="design-preview" href="assets/projects/TEACHER%20SMEY%202.pdf" target="_blank"
-            rel="noopener noreferrer" aria-label="Open Teacher Smey design PDF">
-            <img src="assets/projects/teacher-smey-preview.png"
-              alt="Formal Khmer event design with stage curtains and official portraits">
-            <span class="design-preview-cta">View design ↗</span>
-          </a>
-          <div class="design-card-content">
-            <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
-                class="project-type">Adobe Illustrator</span></div>
-            <h3>Teacher Smey Event Design</h3>
-            <p>A formal Khmer event graphic with a theatrical curtain frame, centered portraits, and a balanced layout
-              for the event details.</p>
-          </div>
-        </article>
-        <article class="design-card">
-          <a class="design-preview" href="assets/projects/congratulation.pdf" target="_blank" rel="noopener noreferrer"
-            aria-label="Open volunteer recognition design PDF">
-            <img src="assets/projects/congratulation-preview.png"
-              alt="Volunteer recognition certificate designed for a community project">
-            <span class="design-preview-cta">View design ↗</span>
-          </a>
-          <div class="design-card-content">
-            <div class="project-card-top"><span class="project-mark"><i class="fa-solid fa-pen-nib"></i></span><span
-                class="project-type">Adobe Illustrator</span></div>
-            <h3>Volunteer Recognition Certificate</h3>
-            <p>A celebratory certificate using a warm palette, clear hierarchy, and decorative confetti to make
-              community recognition feel special.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ ACADEMIC PERFORMANCE ══════════════════════ -->
-  <section id="academics" class="academics-section">
-    <div class="section-inner">
-      <div class="projects-heading">
-        <div>
-          <p class="section-eyebrow">Education</p>
-          <h2 class="section-title">Academic Performance</h2>
-          <p class="section-lead">Bachelor of Science in Software Development · American University of Phnom Penh</p>
-        </div>
-      </div>
-      <div class="academic-profile">
-        <div><span>Student</span><strong>Menghour Sokhom</strong></div>
-        <!-- <div><span>Student ID</span><strong>2025389</strong></div> -->
-        <div><span>Current cumulative GPA</span><strong>3.82 / 4.00</strong></div>
-        <div><span>Total units earned</span><strong>52</strong></div>
-      </div>
-
-      <div class="academic-terms">
-        <article class="academic-term">
-          <h3>Spring 2025</h3>
-          <div class="academic-table-wrap">
-            <table class="academic-table">
-              <thead>
-                <tr>
-                  <th>Course</th>
-                  <th>Title</th>
-                  <th>UA</th>
-                  <th>UE</th>
-                  <th>UC</th>
-                  <th>Grade</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>ENGL 101</td>
-                  <td>English Composition I</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>GEOG 120</td>
-                  <td>World Regional Geography</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>ITEC 101</td>
-                  <td>Introduction to Information Technology</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>MATH 177</td>
-                  <td>Elementary Statistics</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>SMNR 101</td>
-                  <td>First Year Experience</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>P</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="term-summary">Units: 13 attempted · 13 earned · 12 carried <span>Term GPA 4.00 · Cumulative GPA
-              4.00</span></p>
-        </article>
-        <article class="academic-term">
-          <h3>Summer 2025</h3>
-          <div class="academic-table-wrap">
-            <table class="academic-table">
-              <thead>
-                <tr>
-                  <th>Course</th>
-                  <th>Title</th>
-                  <th>UA</th>
-                  <th>UE</th>
-                  <th>UC</th>
-                  <th>Grade</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>ENVS 131C</td>
-                  <td>Environmental Science</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>B</td>
-                </tr>
-                <tr>
-                  <td>HUMN 101</td>
-                  <td>Introduction to the Humanities</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="term-summary">Units: 6 attempted · 6 earned · 6 carried <span>Term GPA 3.50 · Cumulative GPA
-              3.83</span></p>
-        </article>
-        <article class="academic-term">
-          <h3>Fall 2025</h3>
-          <div class="academic-table-wrap">
-            <table class="academic-table">
-              <thead>
-                <tr>
-                  <th>Course</th>
-                  <th>Title</th>
-                  <th>UA</th>
-                  <th>UE</th>
-                  <th>UC</th>
-                  <th>Grade</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>COSC 111</td>
-                  <td>Computer Science Survey</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A-</td>
-                </tr>
-                <tr>
-                  <td>COSC 121</td>
-                  <td>Computer Science A</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>COSC 241</td>
-                  <td>Computing Science Fundamentals</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A-</td>
-                </tr>
-                <tr>
-                  <td>ENGL 102</td>
-                  <td>English Composition II</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>B+</td>
-                </tr>
-                <tr>
-                  <td>HUMN 110</td>
-                  <td>Arts and Culture</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="term-summary">Units: 15 attempted · 15 earned · 15 carried <span>Term GPA 3.73 · Cumulative GPA
-              3.79</span></p>
-        </article>
-        <article class="academic-term">
-          <h3>Spring 2026</h3>
-          <div class="academic-table-wrap">
-            <table class="academic-table">
-              <thead>
-                <tr>
-                  <th>Course</th>
-                  <th>Title</th>
-                  <th>UA</th>
-                  <th>UE</th>
-                  <th>UC</th>
-                  <th>Grade</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>COMM 103</td>
-                  <td>Oral Communication</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A-</td>
-                </tr>
-                <tr>
-                  <td>COSC 331</td>
-                  <td>Operating Systems</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>COSC 340</td>
-                  <td>Networking Essentials</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>ICT 320</td>
-                  <td>Cybersecurity Technician</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>ITM 201</td>
-                  <td>Java Programming I</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="term-summary">Units: 15 attempted · 15 earned · 15 carried <span>Term GPA 3.93 · Cumulative GPA
-              3.83</span></p>
-        </article>
-        <article class="academic-term">
-          <h3>Summer 2026</h3>
-          <div class="academic-table-wrap">
-            <table class="academic-table">
-              <thead>
-                <tr>
-                  <th>Course</th>
-                  <th>Title</th>
-                  <th>UA</th>
-                  <th>UE</th>
-                  <th>UC</th>
-                  <th>Grade</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>COSC 251</td>
-                  <td>Data Structure <small>(Repeated course)</small></td>
-                  <td>3</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>W</td>
-                </tr>
-                <tr>
-                  <td>INFO 250</td>
-                  <td>Web Development I</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>A-</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="term-summary">Units: 6 attempted · 3 earned · 3 carried <span>Term GPA 3.67 · Cumulative GPA
-              3.82</span></p>
-        </article>
-        <article class="academic-term">
-          <h3>Fall 2026 <span class="in-progress">In progress</span></h3>
-          <div class="academic-table-wrap">
-            <table class="academic-table">
-              <thead>
-                <tr>
-                  <th>Course</th>
-                  <th>Title</th>
-                  <th>UA</th>
-                  <th>UE</th>
-                  <th>UC</th>
-                  <th>Grade</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>COSC 221</td>
-                  <td>Computer Science B</td>
-                  <td>3</td>
-                  <td>–</td>
-                  <td>–</td>
-                  <td>RG</td>
-                </tr>
-                <tr>
-                  <td>COSC 251</td>
-                  <td>Data Structure</td>
-                  <td>3</td>
-                  <td>–</td>
-                  <td>–</td>
-                  <td>RG</td>
-                </tr>
-                <tr>
-                  <td>ITM 360</td>
-                  <td>Artificial Intelligence</td>
-                  <td>3</td>
-                  <td>–</td>
-                  <td>–</td>
-                  <td>RG</td>
-                </tr>
-                <tr>
-                  <td>ITM 380</td>
-                  <td>Cloud Computing</td>
-                  <td>3</td>
-                  <td>–</td>
-                  <td>–</td>
-                  <td>RG</td>
-                </tr>
-                <tr>
-                  <td>PHIL 110</td>
-                  <td>Critical Thinking</td>
-                  <td>3</td>
-                  <td>–</td>
-                  <td>–</td>
-                  <td>RG</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="term-summary">Units: 15 attempted · 0 earned · 0 carried <span>Term GPA 0.00 · Cumulative GPA
-              3.82</span></p>
-        </article>
-      </div>
-      <p class="academic-footnote">Academic standing: Good · Total units attempted: 70 · Total grade points earned:
-        195.03</p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ ABOUT ══════════════════════ -->
-  <section id="about" class="about-section">
-    <div class="section-inner">
-      <p class="section-eyebrow">Who I Am</p>
-      <h2 class="section-title">About Me</h2>
-      <p class="section-lead">
-        I'm a Software Development &amp; AI student at the American University of Phnom Penh,
-        with four semesters completed and a 3.83 CGPA. I’m an open-minded, quick learner
-        who values integrity, clear communication, and solving practical problems.
-      </p>
-
-      <div class="resume-grid">
-        <article class="resume-panel">
-          <p class="resume-kicker">Education</p>
-          <div class="resume-entry">
-            <h3>American University of Phnom Penh</h3>
-            <p class="resume-subtitle">Software Development &amp; AI · Current student</p>
-            <ul class="resume-list">
-              <li>Four semesters completed</li>
-              <li>CGPA: 3.83, with a consistent record of mostly A+ grades</li>
+        <div class="competencies">
+          <div>
+            <p class="resume-kicker">Core Competencies</p>
+            <ul class="competency-list">
+              <li>Project management &amp; leadership</li>
+              <li>Critical thinking &amp; problem-solving</li>
+              <li>Communication &amp; public relations</li>
+              <li>Teamwork &amp; time management</li>
             </ul>
           </div>
-          <div class="resume-entry">
-            <h3>Oudong High School</h3>
-            <p class="resume-subtitle">High School Diploma (Bac II) · 2023–2024</p>
-            <ul class="resume-list">
-              <li>Overall grade: A</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="resume-panel">
-          <p class="resume-kicker">Technical Skills</p>
-          <h3>Programming &amp; Web</h3>
-          <p class="resume-copy">Python, PHP, JavaScript (React.js), HTML, CSS, MySQL, and data structures.</p>
-          <h3 class="resume-spaced">Design &amp; Productivity</h3>
-          <p class="resume-copy">Adobe Illustrator for themed visual design; Microsoft Word for polished documents;
-            Microsoft PowerPoint for well-designed animated presentations.</p>
-          <h3 class="resume-spaced">Continuous Learning</h3>
-          <p class="resume-copy">Self-study through Coursera alongside university coursework; quick to learn new tools
-            and systems.</p>
-        </article>
-
-        <article class="resume-panel">
-          <p class="resume-kicker">Experience &amp; Involvement</p>
-          <div class="resume-entry">
-            <h3>Community Volunteer</h3>
-            <p class="resume-subtitle">One More Group (Vital and Mii Chiet) / First Lady Events</p>
-            <p class="resume-copy">Supported large charity initiatives and community events in Cambodia, building
-              experience in event coordination, public relations, and teamwork in fast-paced settings.</p>
-          </div>
-          <div class="resume-entry">
-            <h3>Academic Project Management</h3>
-            <p class="resume-subtitle">American University of Phnom Penh</p>
-            <p class="resume-copy">Managed multiple demanding project deadlines through time management, adaptability,
-              and continuous learning.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="competencies">
-        <div>
-          <p class="resume-kicker">Core Competencies</p>
-          <ul class="competency-list">
-            <li>Project management &amp; leadership</li>
-            <li>Critical thinking &amp; problem-solving</li>
-            <li>Communication &amp; public relations</li>
-            <li>Teamwork &amp; time management</li>
-          </ul>
-        </div>
-        <div class="language-block">
-          <p class="resume-kicker">Languages</p>
-          <h3>English <span>Upper-Intermediate · B2</span></h3>
-          <p class="resume-copy">Confident in written communication and conversation; continuing to improve through an
-            international university program.</p>
-        </div>
-      </div>
-
-      <!-- Skill cards -->
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-          <h3>Web Development</h3>
-          <p>Building clean, fast, responsive web experiences using modern tools and techniques.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-          <h3>AI &amp; Technology</h3>
-          <p>Deeply fascinated by artificial intelligence and how it will shape our future.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
-          <h3>Communication</h3>
-          <p>Open-minded, approachable, and eager to collaborate and grow with a team.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ CONTACT ══════════════════════ -->
-  <section id="contact" class="contact-section">
-    <div class="section-inner">
-      <p class="section-eyebrow">Get In Touch</p>
-      <h2 class="section-title">Contact Me</h2>
-      <p class="section-lead">Reach out about software, AI, volunteer opportunities, or potential collaboration.</p>
-
-      <div class="contact-grid">
-        <a href="callto:+85585700533" class="contact-card">
-          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-          <div class="contact-info">
-            <span class="contact-label">Phone</span>
-            <span class="contact-value">+855 85 700 533</span>
-          </div>
-        </a>
-
-        <a href="mailto:menghoursokhom@gmail.com" class="contact-card">
-          <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
-          <div class="contact-info">
-            <span class="contact-label">Email</span>
-            <span class="contact-value">menghoursokhom@gmail.com</span>
-          </div>
-        </a>
-
-        <div class="contact-card no-link">
-          <div class="contact-icon"><i class="fa-regular fa-map"></i></div>
-          <div class="contact-info">
-            <span class="contact-label">Location</span>
-            <span class="contact-value">Boeung Kak 2, Phnom Penh</span>
+          <div class="language-block">
+            <p class="resume-kicker">Languages</p>
+            <h3>English <span>Upper-Intermediate · B2</span></h3>
+            <p class="resume-copy">Confident in written communication and conversation; continuing to improve through an
+              international university program.</p>
           </div>
         </div>
 
-        <!-- Social -->
-        <div class="contact-card no-link social-card">
-          <span class="contact-label" style="margin-bottom:12px">Find me on</span>
-          <div class="social-row">
-            <a href="https://www.facebook.com/share/17guN6UvwB/?mibextid=wwXIfr" class="social-btn" target="_blank"
-              aria-label="Facebook">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/sokhom.d_menghour?igsh=OHY2cmxzaDVmMWt6&utm_source=qr"
-              class="social-btn social-ig" target="_blank" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/sokhom-menghour-abb7983a6/" class="social-btn" target="_blank"
-              aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/CHADZ40" class="social-btn" target="_blank" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://t.me/Mitchikatsu_Hour" class="social-btn" target="_blank" aria-label="Telegram">
-              <i class="fa-brands fa-telegram"></i>
-            </a>
+        <!-- Skill cards -->
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Building clean, fast, responsive web experiences using modern tools and techniques.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>AI &amp; Technology</h3>
+            <p>Deeply fascinated by artificial intelligence and how it will shape our future.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Communication</h3>
+            <p>Open-minded, approachable, and eager to collaborate and grow with a team.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════ FOOTER ══════════════════════ -->
-  <footer>
-    <p>&copy; 2026 SOKHOM Menghour. All rights reserved.</p>
-  </footer>
+    <!-- ══════════════════════ CONTACT ══════════════════════ -->
+    <section id="contact" class="contact-section">
+      <div class="section-inner">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-lead">Reach out about software, AI, volunteer opportunities, or potential collaboration.</p>
 
-  <!-- Cursor glow -->
-  <div id="cursor-glow"></div>
+        <div class="contact-grid">
+          <a href="callto:+85585700533" class="contact-card">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-info">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">+855 85 700 533</span>
+            </div>
+          </a>
 
-  <script src="assets/js/script.js"></script>
-  <script>
-    /* ── Hamburger ── */
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
+          <a href="mailto:menghoursokhom@gmail.com" class="contact-card">
+            <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">menghoursokhom@gmail.com</span>
+            </div>
+          </a>
 
-    menuBtn.addEventListener('click', () => {
-      const open = !mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      bar1.style.transform = open ? '' : 'rotate(45deg) translate(0, 6px)';
-      bar2.style.opacity = open ? '' : '0';
-      bar3.style.transform = open ? '' : 'rotate(-45deg) translate(0, -6px)';
-    });
+          <div class="contact-card no-link">
+            <div class="contact-icon"><i class="fa-regular fa-map"></i></div>
+            <div class="contact-info">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Boeung Kak 2, Phnom Penh</span>
+            </div>
+          </div>
 
-    ['mob-home', 'mob-projects', 'mob-design', 'mob-academics', 'mob-about', 'mob-contact'].forEach(id => {
-      document.getElementById(id)?.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        bar1.style.transform = bar3.style.transform = '';
-        bar2.style.opacity = '';
-      });
-    });
-  </script>
+          <!-- Social -->
+          <div class="contact-card no-link social-card">
+            <span class="contact-label" style="margin-bottom:12px">Find me on</span>
+            <div class="social-row">
+              <a href="https://www.facebook.com/share/17guN6UvwB/?mibextid=wwXIfr" class="social-btn" target="_blank"
+                aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/sokhom.d_menghour?igsh=OHY2cmxzaDVmMWt6&utm_source=qr"
+                class="social-btn social-ig" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/sokhom-menghour-abb7983a6/" class="social-btn" target="_blank"
+                aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/CHADZ40" class="social-btn" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://t.me/Mitchikatsu_Hour" class="social-btn" target="_blank" aria-label="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ FOOTER ══════════════════════ -->
+    <footer>
+      <p>&copy; 2026 SOKHOM Menghour. All rights reserved.</p>
+    </footer>
+
+    <!-- Cursor glow -->
+    <div id="cursor-glow"></div>
+
+  </template>
 </body>
 
 </html>
