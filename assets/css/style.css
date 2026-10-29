@@ -663,23 +663,94 @@ html.anim .hero-meta, html.anim .nav { opacity: 0; }
   .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .bento { grid-template-columns: 1fr; }
-  .bento > * { grid-column: auto !important; grid-row: auto !important; }
-  .tile-photo { min-height: 420px; }
-  .hero { padding-bottom: 32px; }
-    .hero-photo { top: 88px; width: 54vw; aspect-ratio: auto; height: clamp(160px, calc(100svh - 500px), calc(54vw * 4 / 3)); border-radius: 20px; }
-  .hero-photo figcaption { font-size: 9px; }
-  .hero-photo figcaption span:last-child { display: none; }
+  html, body { overflow-x: clip; }
+  .terms { overflow-x: clip; }
+  .section { padding-top: 88px; padding-bottom: 88px; }
+  .section-head { margin-bottom: 36px; }
+
+  /* nav: solid glass bar once scrolled so it never collides with content */
+  .nav { padding: 12px var(--pad); }
+  .nav::before {
+    inset: 0; background: var(--glass);
+    backdrop-filter: blur(18px) saturate(1.6); -webkit-backdrop-filter: blur(18px) saturate(1.6);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav.is-scrolled::before { opacity: 1; }
+  .brand-mark { width: 36px; height: 36px; }
+
+  /* hero: full-bleed photo that fades into the page, title overlapping it */
+  .hero { min-height: 100svh; padding: 0 var(--pad) 28px; gap: 20px; }
+  .hero-photo {
+    position: absolute; z-index: 0; top: 0; right: 0; left: 0;
+    width: 100%; height: 64svh; aspect-ratio: auto;
+    border: 0; border-radius: 0; box-shadow: none;
+    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 98%);
+            mask-image: linear-gradient(to bottom, #000 45%, transparent 98%);
+  }
+  .hero-photo img { height: 118%; object-position: center 70%; }
+  .hero-photo figcaption { display: none; }
+  .hero-bottom { position: static; }
+  .hero-meta, .hero-title, .hero-lede, .hero-cta { position: relative; z-index: 1; }
+  .hero-meta .chip { background: rgba(10, 10, 16, .45); color: #fff; border-color: rgba(255, 255, 255, .18); }
+  .hero-title { font-size: 18.5vw; }
+  .hero-title .line-2 { gap: .06em; }
+  .hero-badge { width: 54px; font-size: 16px; }
+  .hero-badge text { font-size: 11px; }
+  .hero-lede { font-size: 17px; }
   .hero-clock { display: none; }
+  .hero-cta { gap: 10px; }
   .hero-cta .btn { flex: 1; justify-content: center; }
-  .ring-card { grid-template-columns: 1fr; justify-items: center; }
+
+  .marquee { padding: 16px 0; }
+  .marquee-track { font-size: 30px; gap: 24px; }
+
+  .statement { font-size: 30px; margin-bottom: 48px; }
+  .bento { grid-template-columns: 1fr; gap: 12px; }
+  .bento > * { grid-column: auto !important; grid-row: auto !important; }
+  .tile-photo { min-height: 440px; }
+
+  .stack { gap: 20px; }
+  .project { border-radius: 28px; padding: 22px; gap: 22px; }
+  .project-num { font-size: 64px; }
+  .browser { border-radius: 16px; }
+
+  .poster-img { --ph: 52svh; }
+
+  .ring-card { grid-template-columns: 1fr; justify-items: center; padding: 26px 22px; }
   .ring-stats { width: 100%; }
   .chart-card { padding: 22px 18px; }
+  .bars { min-height: 180px; }
+  .term summary { padding: 22px 4px; }
+  .term summary:hover { padding-left: 4px; }
   .term-gpa { display: none; }
   .term-body td:nth-child(3), .term-body th:nth-child(3) { display: none; }
   .term-body td:first-child { width: auto; font-size: 11px; }
-  .poster-img { --ph: 52vh; }
-  .mail-btn { padding-left: 20px; gap: 12px; }
+
+  .contact { gap: 28px; }
+  .mail-btn { padding-left: 20px; gap: 12px; font-size: 16px; }
+  .contact-grid { gap: 12px; margin-top: 4px; }
+  .footer-name { padding-top: 20px; }
+  .footer-row { flex-direction: column; gap: 8px; }
+}
+
+/* phone: pinned sideways gallery */
+html.hscroll-m .design { padding: 0; }
+html.hscroll-m .design-pin { height: 100svh; justify-content: center; gap: 28px; overflow: hidden; }
+html.hscroll-m .design-track { overflow: visible; scroll-snap-type: none; padding-bottom: 0; will-change: transform; }
+html.hscroll-m .poster-img { --ph: min(48svh, 420px); }
+
+/* touch screens: no "stuck" hover states after a tap */
+@media (hover: none) {
+  .spot:hover::before, .spot:hover::after { opacity: 0; }
+  .poster:hover .poster-img { transform: none; border-radius: 20px; }
+  .project:hover .browser { transform: none; }
+  .tile-photo:hover img { transform: none; }
+  .btn:hover::before { transform: translateY(101%); }
+  .btn:hover { color: inherit; }
+  .btn-primary:hover { color: var(--bg); }
+  .tags li:hover { translate: none; border-color: var(--line); color: inherit; }
+  .term summary:hover { padding-left: 4px; }
+  .spot.is-touched::before, .spot.is-touched::after { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
