@@ -2,7 +2,7 @@
 
 # SOKHOM Menghour — Personal Portfolio
 
-A clean, minimalist personal portfolio website built with a modern Apple-inspired design system.
+A cinematic, motion-rich personal portfolio — WebGL aurora, kinetic typography, and smooth scroll-driven storytelling.
 Fully responsive across mobile, tablet, and desktop.
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-Visit-0071e3?style=for-the-badge&logo=safari&logoColor=white)](https://chadz40.github.io/resume)
@@ -23,12 +23,12 @@ Fully responsive across mobile, tablet, and desktop.
 
 | Layer | Technology |
 |---|---|
-| **UI framework** | React 18 (CDN, no build step) |
-| **Markup** | Semantic HTML rendered by the React portfolio app |
-| **Styling** | Custom responsive CSS |
+| **Markup** | Static semantic HTML, no build step |
+| **Styling** | Custom CSS with design tokens, light/dark themes, glassmorphism |
+| **Motion** | [GSAP 3](https://gsap.com) + ScrollTrigger, [Lenis](https://lenis.darkroom.engineering) smooth scroll |
+| **Background** | Custom WebGL fragment shader (animated aurora) |
 | **Icons** | [Font Awesome 6](https://fontawesome.com) |
-| **Fonts** | System font stack — `-apple-system`, `SF Pro Display`, `Helvetica Neue` |
-| **Design Language** | Apple Human Interface Guidelines — white/gray palette, frosted-glass nav |
+| **Fonts** | Geist, Geist Mono, Instrument Serif (Google Fonts) |
 
 ---
 
@@ -36,60 +36,35 @@ Fully responsive across mobile, tablet, and desktop.
 
 ```
 .
-├── index.html                       ← Vercel entry point
+├── index.html                       ← Entry point (all content lives here)
 ├── assets/
-│   ├── css/style.css                ← Responsive themes and page styling
-│   ├── js/app.js                    ← React app, navigation, theme, glow, and scroll reveals
-│   ├── images/                      ← Portfolio and profile photos
+│   ├── css/style.css                ← Design tokens, themes, layouts, responsive rules
+│   ├── js/main.js                   ← Aurora shader, motion, cursor, lightbox, interactions
+│   ├── img/                         ← Web-optimised photos and design previews
 │   └── doc/SOKHOM_Menghour_CV.pdf   ← Downloadable CV
 └── README.md
 ```
 
 ---
 
-## 🎨 Design System
-
-The site follows Apple's visual identity closely:
-
-| Token | Value | Usage |
-|---|---|---|
-| Background | `#ffffff` | Page background |
-| Surface | `#f5f5f7` | Contact section, footer |
-| Text Primary | `#1d1d1f` | Headings, body |
-| Text Secondary | `#6e6e73` | Subtitles, captions |
-| Accent Blue | `#0071e3` | Links, buttons, underlines |
-| Border | `#d2d2d7` | Dividers, card edges |
-| Nav | `rgba(255,255,255,0.72)` + `blur(20px)` | Frosted-glass navbar |
-
----
-
-## 📱 Responsive Breakpoints
-
-| Breakpoint | Width | Layout |
-|---|---|---|
-| **Mobile** | `< 768px` | Single-column, hamburger menu |
-| **Tablet** | `768px – 1023px` | Stacked hero, pill nav visible |
-| **Desktop** | `≥ 1024px` | Full side-by-side hero layout |
-
----
-
 ## ⚡ Features
 
-- 🍎 **Apple-inspired design** — pure white background, `#0071e3` accent, SF Pro font stack
-- 📱 **Fully responsive** — mobile hamburger nav, fluid typography, touch-friendly tap targets
-- 🌫️ **Frosted-glass navigation** — `backdrop-filter: saturate(180%) blur(20px)` sticky nav
-- 🌗 **Dark and light themes** — React-powered theme switch, saved preference, and animated transition
-- 🎞️ **Scroll reveals** — Intersection Observer animations with reduced-motion support
-- ✨ **Mouse glow effect** — toggleable ambient cursor glow (desktop)
-- 🔗 **Instagram card** — live preview card with hover overlay
-- 📄 **One-click CV download** — direct PDF link in the hero section
-- 🔗 **Social links** — Facebook, Instagram, LinkedIn, GitHub, Telegram
+- 🌌 **WebGL aurora background** — mouse-reactive, theme-aware, rendered at half resolution for speed
+- 🎬 **Preloader → hero intro** — counter, curtain wipe, and per-letter name reveal
+- 🔤 **Kinetic type** — scramble-text role rotator, scroll-lit statement, masked heading wipes
+- 🧲 **Custom cursor & magnetic buttons** — contextual labels ("View", "Open", "Copy") on desktop
+- 🗂️ **Sticky stacking project cards** with lazy-loaded live site previews in browser frames
+- ↔️ **Pinned horizontal design gallery** with parallax and a FLIP-animated lightbox
+- 📊 **Academics dashboard** — animated GPA ring, term GPA bar chart, expandable transcripts
+- 🌗 **Light / dark themes** — circular View Transition reveal, preference saved
+- 📋 **Copy-to-clipboard email**, live Phnom Penh clock, scroll progress bar
+- ♿ **Accessible** — skip link, keyboard-friendly, full `prefers-reduced-motion` fallback, works without JS
 
 ---
 
 ## 🚀 Getting Started
 
-No build step is required. Serve the repository root so the browser can load the React app and its assets:
+No build step is required. Serve the repository root so the browser can load the assets:
 
 ```bash
 # Clone the repo
